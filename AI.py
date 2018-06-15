@@ -28,7 +28,7 @@ def AI_answer(myMsg):
         if response.exitcode == 0:
             print(response.stdout)
 
-    elif ("A ？" or "A？" or myMsg == "熱水器 狀態" or myMsg == "熱水器狀態"):
+    elif (myMsg == "A ？" or myMsg == "A？" or myMsg == "熱水器 狀態" or myMsg == "熱水器狀態"):
         if (sheet.cell(1, 1) == "1"):
             myResult = "熱水器現在: 開啟"
         else:
