@@ -7,6 +7,7 @@ sheet = GoogleSheet("database")
 
 def AI_answer(myMsg):
     myResult = ""
+    print(myMsg)
     if (myMsg == "你好" or myMsg == "早安" or myMsg == "午安" or myMsg == "晚安"):
         myResult = myMsg
 

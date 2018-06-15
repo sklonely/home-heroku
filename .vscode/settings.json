@@ -10,5 +10,9 @@
     "editor.snippetSuggestions": "none",
     "sync.autoUpload": true,
     "editor.detectIndentation": false,
-    "python.formatting.yapfArgs": ["--style", "{based_on_style: google, indent_width: 4,COLUMN_LIMIT: 321}"]
+    "python.formatting.yapfArgs": [
+        "--style",
+        "{based_on_style: google, indent_width: 4,COLUMN_LIMIT: 321}"
+    ],
+    "python.pythonPath": "C:\\Users\\user\\Anaconda3\\python.exe"
 }
