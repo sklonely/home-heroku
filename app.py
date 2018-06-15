@@ -1,17 +1,24 @@
-import os
-from flask import Flask, abort, request
-import AI
-from linebot import LineBotApi, WebhookHandler
-from linebot.exceptions import InvalidSignatureError
-from linebot.models import (ImageSendMessage, MessageEvent, TextMessage,
-                            TextSendMessage)
+while 1:
+    try:
+        import os
+        # import datetime  # 時間
+        import sys
+        from flask import Flask, abort, request
+        import AI
+        from linebot import LineBotApi, WebhookHandler
+        from linebot.exceptions import InvalidSignatureError
+        from linebot.models import (ImageSendMessage, MessageEvent, TextMessage, TextSendMessage)
+    except ModuleNotFoundError:
+        err = str(sys.exc_info()[1])
+        print("缺少mod name: " + err[17:-1] + "正在進行安裝")
+        os.system('pip install ' + err[17:-1])
+    else:
+        break
 
 app = Flask(__name__)
 
 # Channel Access Token
-line_bot_api = LineBotApi(
-    'SCxxKg4cVbfVJn/ZU1E/Hor5wlyakdnjCBo7uHK1P7wqMB+VNMUmcbipYTw2yrRrZZzxUNfAOBmHN/rGjXFGUfaGjAk96l/VVzkzGif6jIxNgL04G93aRK9n/E8gjLMplwzP7Y8gielrXBMUqT55VAdB04t89/1O/w1cDnyilFU='
-)
+line_bot_api = LineBotApi('SCxxKg4cVbfVJn/ZU1E/Hor5wlyakdnjCBo7uHK1P7wqMB+VNMUmcbipYTw2yrRrZZzxUNfAOBmHN/rGjXFGUfaGjAk96l/VVzkzGif6jIxNgL04G93aRK9n/E8gjLMplwzP7Y8gielrXBMUqT55VAdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
 handler = WebhookHandler('a61a3af3affa9274c388bf7fe3b07058')
 
