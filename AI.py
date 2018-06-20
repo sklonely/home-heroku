@@ -14,6 +14,9 @@ def AI_answer(myMsg):
     elif (myMsg == "使用方法" or myMsg == "?" or myMsg == "？"):
         myResult = "------指令清單------\n 1.熱水器 開\n 2.熱水器 關\n 3.熱水器 狀態\n 4.開發者"
 
+    elif (myMsg == "天氣"):
+        myResult = "開發中...請靜候"
+        
     elif (myMsg == "Aon" or myMsg == "A on" or myMsg == "熱水器 開" or myMsg == "熱水器開"):
         myResult = "已開啟熱水器"
         sheet.update(1, 1, 1)
@@ -28,7 +31,7 @@ def AI_answer(myMsg):
         if response.exitcode == 0:
             print(response.stdout)
 
-    elif (myMsg == "A ？" or myMsg == "A？" or myMsg == "熱水器 狀態" or myMsg == "熱水器狀態"):
+    elif (myMsg == "熱水器" or myMsg == "A？" or myMsg == "熱水器 狀態" or myMsg == "熱水器狀態"):
         if (sheet.cell(1, 1) == "1"):
             myResult = "熱水器現在: 開啟"
         else:
