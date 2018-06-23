@@ -16,23 +16,23 @@ def AI_answer(myMsg):
 
     elif (myMsg == "天氣"):
         myResult = "開發中...請靜候"
-        
+
     elif (myMsg == "Aon" or myMsg == "A on" or myMsg == "熱水器 開" or myMsg == "熱水器開"):
         myResult = "已開啟熱水器"
-        sheet.update(1, 1, 1)
+        sheet.update(1, 2, 1)
         response = muterun_js('webduino_on.js')
         if response.exitcode == 0:
             print(response.stdout)
 
     elif (myMsg == "Aoff" or myMsg == "A off" or myMsg == "熱水器 關" or myMsg == "熱水器關"):
         myResult = "已關閉熱水器"
-        sheet.update(1, 1, 0)
+        sheet.update(1, 2, 0)
         response = muterun_js('webduino_off.js')
         if response.exitcode == 0:
             print(response.stdout)
 
     elif (myMsg == "熱水器" or myMsg == "A？" or myMsg == "熱水器 狀態" or myMsg == "熱水器狀態"):
-        if (sheet.cell(1, 1) == "1"):
+        if (sheet.cell(1, 2) == "1"):
             myResult = "熱水器現在: 開啟"
         else:
             myResult = "熱水器現在: 關閉"
