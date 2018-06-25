@@ -7,9 +7,9 @@
         "--max-line-length=321", // 一行最長字數
         "--ignore=F401,E722,E501,E266" // 忽略掉這些錯誤
     ],
-    "editor.snippetSuggestions": "none",
     "sync.autoUpload": true,
     "editor.detectIndentation": false,
+    "editor.snippetSuggestions": "top",
     "python.formatting.yapfArgs": [
         "--style",
         "{based_on_style: google, indent_width: 4,COLUMN_LIMIT: 321}"
