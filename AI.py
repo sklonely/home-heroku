@@ -1,4 +1,5 @@
 import googlesheet
+import apiUse
 from Naked.toolshed.shell import execute_js, muterun_js
 from googlesheet import GoogleSheet
 
@@ -15,7 +16,11 @@ def AI_answer(myMsg):
         myResult = "------指令清單------\n 1.熱水器 開\n 2.熱水器 關\n 3.熱水器 狀態\n 4.開發者"
 
     elif (myMsg == "天氣"):
-        myResult = "開發中...請靜候"
+        myResult = ""
+        a = apiUse.Weather().get_all()
+        for i in range(len(a)):
+            if (i % 2):
+                myResult = myResult + (a[i - 1] + a[i] + "\n")
 
     elif (myMsg == "Aon" or myMsg == "A on" or myMsg == "熱水器 開" or myMsg == "熱水器開"):
         myResult = "已開啟熱水器"
