@@ -36,7 +36,7 @@ class Weather():
         # print("濕度: ", str(weatherData["humidity"]) + " %")
         # print("實際溫度: ", str(weatherData["temperature"]) + " 度")
 
-        self.weatherList = ["天氣預報時間: ", weatherData["at"], "簡短描述: ", weatherData["desc"], "體感溫度: ", str(weatherData["felt_air_temp"]) + " 度", "濕度: ", str(weatherData["humidity"]) + " %", "實際溫度: ", str(weatherData["temperature"]) + " 度"]
+        self.weatherList = ["資料更新時間: ", weatherData["at"], "簡短描述: ", weatherData["desc"], "體感溫度: ", str(weatherData["felt_air_temp"]) + " 度", "濕度: ", str(weatherData["humidity"]) + " %", "實際溫度: ", str(weatherData["temperature"]) + " 度"]
         # print(self.weatherList)
 
     def get_all(self):
