@@ -14,5 +14,5 @@
         "--style",
         "{based_on_style: google, indent_width: 4,COLUMN_LIMIT: 321}"
     ],
-    "python.pythonPath": "D:\\Anaconda\\python.exe"
+    "python.pythonPath": "C:\\Users\\user\\Anaconda3\\python.exe"
 }
