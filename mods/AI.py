@@ -84,7 +84,6 @@ def AI_answer(myMsg):
     return myResult
 
 
-AI_answer("匯率")
 """"
 print(AI_answer("熱水器 開"))
 print(AI_answer("熱水器 狀態"))
