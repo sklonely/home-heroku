@@ -54,7 +54,7 @@ def callback():
 
 @app.route("/getup", methods=['GET'])
 def getup():
-    print("google get up heroku")
+    print("google喚醒heroku")
     return 'OK'
 
 
