@@ -24,7 +24,8 @@ while 1:
         del lestModName
         break
 # import自動修復 程式碼片段
-sheet = GoogleSheet("database")
+sheet = GoogleSheet("database", "電器狀態")
+sheet2 = GoogleSheet("database", "匯率")
 
 
 def AI_answer(myMsg):
@@ -42,6 +43,14 @@ def AI_answer(myMsg):
         for i in range(len(a)):
             if (i % 2):
                 myResult = myResult + (a[i - 1] + a[i] + "\n")
+
+    elif (myMsg == "匯率"):
+        myResult = ""
+        data = sheet2.row_values(2)
+        tittle = sheet2.row_values(1)
+        for i in range(len(data)):
+            myResult = myResult + (tittle[i] + ": " + data[i] + "\n")
+        print(myResult)
 
     elif (myMsg == "Aon" or myMsg == "A on" or myMsg == "熱水器 開" or myMsg == "熱水器開"):
         myResult = "已開啟熱水器"
@@ -75,6 +84,7 @@ def AI_answer(myMsg):
     return myResult
 
 
+AI_answer("匯率")
 """"
 print(AI_answer("熱水器 開"))
 print(AI_answer("熱水器 狀態"))
